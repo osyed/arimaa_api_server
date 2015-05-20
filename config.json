@@ -1,0 +1,20 @@
+
+{
+
+"db":
+{
+  "connectionLimit" : 10,
+  "host"            : "localhost",
+  "database"        : "db",
+  "user"            : "user",
+  "password"        : "pw",
+  "insecureAuth"    : true
+},
+
+"http":
+{
+  "port"            : 3333,
+  "host"            : "127.0.0.1"
+}
+
+}

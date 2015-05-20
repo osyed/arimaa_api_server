@@ -1,0 +1,53 @@
+
+All requests are HTTP POST method.
+
+The data format for the request body is JSON.
+
+The data format for the response is JSON.
+
+Required field in the request is 'action', the rest of the fields
+depend on the value of the 'action' field.
+
+Required field in the response is 'error'. If set to 1 then
+a 'reason' field provides a string with the error message.
+If set to 0 then the 'data' field contains the response data.
+
+
+request.action == 'get'
+
+  request.what - an array of objects; max lenth 20
+    what.name - the name given to this query; will be used in the response
+    what.from = 'games' - default; the data table to query; allowed values 'games', 'live_games', 'players'
+    what.where = '' - default
+    what.order = '' - default
+    what.limit = 20 - default; max 100; min 1
+    what.offset = 0 - default
+  response.data.<name> - an array of objects; number of items in array determined by the limit field of request
+    <name>[x].<field> - the fields from the requested data
+
+  request.what.name == 'recent_games' 
+    recent_games.limit = 20 - default; max 100; min 1
+    recent_games.players = '*' - default; all games
+                           'h*' - one of the players is human
+                           'hh' - both players are human
+                           'hb' - one player is human and the other is a bot
+                           'bb' - both players are bots
+                           'b*' - one of the players is a bot
+    recent_games.postal = '*' - default; all games
+                          'p' - postal games only
+                          'i' - interactive (non-postal) games only
+    what.limit = 20 - default; max 100; min 1
+    what.offset = 0 - default
+                      
+
+
+  request.items is an array or object
+    item.what = 'recent_games'
+    item.limit = 20 - default
+    item.
+  response.data.recent_games is an array of games
+    game.id
+    game.wusername
+    game.busername
+    
+

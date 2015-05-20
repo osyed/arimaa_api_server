@@ -1,0 +1,6 @@
+
+Add the following to the apache conf file
+
+ProxyPass /path/api/v1 http://localhost:3333
+ProxyPassReverse /path/api/v1 http://localhost:3333
+

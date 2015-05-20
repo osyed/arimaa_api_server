@@ -1,0 +1,22 @@
+
+Install NodeJS:
+  using a package manager:
+    https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+  or binary:
+    https://nodejs.org/download/
+
+Install NodeJS packages:
+  npm install coffee-script
+  npm install iced-coffee-script
+  npm install mysql
+  ln -s node_modules/.bin/iced iced
+
+Install the MySQL or MariaDB server.
+
+Install the Apache server.
+
+Edit config.json to set the port and database info.
+
+Run the server:
+  ./api.iced
+
